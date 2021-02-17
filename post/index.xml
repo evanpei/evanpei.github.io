@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Evan Pei</title>
-    <link>https://evanpei.github.io/</link>
-    <description>Recent content on Evan Pei</description>
+    <title>Posts on Evan Pei</title>
+    <link>https://evanpei.github.io/post/</link>
+    <description>Recent content in Posts on Evan Pei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Mar 2018 01:32:05 +0800</lastBuildDate><atom:link href="https://evanpei.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Mar 2018 01:32:05 +0800</lastBuildDate><atom:link href="https://evanpei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP通过socket连接数据库的问题</title>
       <link>https://evanpei.github.io/post/php%E9%80%9A%E8%BF%87socket%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
