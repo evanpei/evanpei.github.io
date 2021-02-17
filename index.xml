@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP通过socket连接数据库的问题</title>
+      <link>http://localhost:1313/php%E9%80%9A%E8%BF%87socket%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 18 Mar 2018 01:32:05 +0000</pubDate>
+      
+      <guid>http://localhost:1313/php%E9%80%9A%E8%BF%87socket%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在给客户部署一个网站的时候，遇到一个奇葩的问题。在访问主页的时候页面打印出 “couldn&amp;rsquo;t connect to mysql”。然后立刻查看 /</description>
+    </item>
+    
+  </channel>
+</rss>
