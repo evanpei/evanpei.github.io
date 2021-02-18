@@ -164,27 +164,27 @@
 <ol>
 <li>
 <p>按下图所示打开分机设置面板。</p>
-<p><img src="/media/image001.png" alt="image001"></p>
+<p><img src="/media/goip-connect-to-3cx/image001.png" alt="image001"></p>
 </li>
 <li>
 <p>按下图所示顺序操作添加一个分机账号</p>
-<p><img src="/media/image002.png" alt="image002"></p>
+<p><img src="/media/goip-connect-to-3cx/image002.png" alt="image002"></p>
 </li>
 <li>
 <p>根据所设置的信息填写SIP话机，使其注册到3CX。成功注册的分机如下图显示绿色标记，若为红色，则表示未注册成功，请检查注册信息是否填写正确。</p>
-<p><img src="/media/image003.png" alt="image003"></p>
+<p><img src="/media/goip-connect-to-3cx/image003.png" alt="image003"></p>
 </li>
 </ol>
 <h1 id="2添加sip中继">2.添加SIP中继</h1>
 <p>1.如下图所示，点击“SIP中继”打开SIP中继配置面板，然后点击“添加网关”按钮添加一个落地网关账号。</p>
-<p><img src="/media/image005.jpg" alt="image005"></p>
+<p><img src="/media/goip-connect-to-3cx/image005.jpg" alt="image005"></p>
 <p>2.在弹出的菜单中选择网关品牌为Generic，网关型号为Generic Gateway Device。由于这里使用的网关为16口GoIP，因此设备的PSTN端口数量设置为16，其他网关根据线路数量作调整。中继线号码填“1003”，点击“完成”，进入详细设置。</p>
-<p><img src="/media/image007.jpg" alt="image007"></p>
+<p><img src="/media/goip-connect-to-3cx/image007.jpg" alt="image007"></p>
 <p>3.在“注册商/服务器/网关的主机名或IP地址”里填写GoIP的IP地址和SIP端口号，默认情况下端口号为5060。验证类型选择“无需验证，基于IP”。特别注意这里的“验证ID”和“验证密码”，在通过GoIP呼出到PSTN时用不上，但是在通过GoIP呼入至话机时3CX会验证用户名和密码。</p>
-<p><img src="/media/image009.jpg" alt="image009"></p>
+<p><img src="/media/goip-connect-to-3cx/image009.jpg" alt="image009"></p>
 <h1 id="3配置goip连接至3cx">3.配置GoIP连接至3CX</h1>
 <p>(1)点击“VoIP基本配置”，按下图所示配置”</p>
-<p><img src="/media/image010.png" alt="image010"></p>
+<p><img src="/media/goip-connect-to-3cx/image010.png" alt="image010"></p>
 <p>配置模式——“Trunk Gateway模式”，即点对点模式，不用向服务器注册，只认证IP</p>
 <p>SIP Trunk Gateway1——3CX服务器的IP，若3CX的SIP端口不是5060，则按这样的格式填写：IP:Port，例如192.168.3.182:5080</p>
 <p>电话号码——上一步设置中设置的中继线号码</p>
@@ -192,25 +192,25 @@
 <p>密码——上一步中继线设置里的验证密码</p>
 <h1 id="4配置3cx呼出至goip">4.配置3CX呼出至GoIP</h1>
 <p>1.按下图数字添加呼出规则。</p>
-<p><img src="/media/image011.png" alt="image010"></p>
+<p><img src="/media/goip-connect-to-3cx/image011.png" alt="image010"></p>
 <p>2.这里以一个简单的呼出规则作为示例。当匹配到被叫号的前缀为 9 时，则删掉第一位数</p>
 <p>字 9，将呼叫发送至 SIP 中继——“goip”。</p>
-<p><img src="/media/image013.jpg" alt="image013"></p>
+<p><img src="/media/goip-connect-to-3cx/image013.jpg" alt="image013"></p>
 <p>在弹出框内按下图设置，允许DEFAULT组内的所有分机通过这个中继网关呼出。</p>
-<p><img src="/media/image015.jpg" alt="image015"></p>
+<p><img src="/media/goip-connect-to-3cx/image015.jpg" alt="image015"></p>
 <p>3.配置呼出线路，在路由1里选择中继网关“goip”，删除位数选“1”。表示在通过中继网关“goip”呼出时，删掉被叫号码的的第一位数字“9”。</p>
-<p><img src="/media/image017.jpg" alt="image017"></p>
+<p><img src="/media/goip-connect-to-3cx/image017.jpg" alt="image017"></p>
 <p>4.测试呼出是否正常，注意拨号时加拨前缀“9”，如“910086”。</p>
 <h1 id="5配置goip呼入至3cx">5.配置GoIP呼入至3CX</h1>
 <p>1.点击左侧导航栏“呼入规则”打开呼入规则配置面板，点击“添加CID规则”。</p>
-<p><img src="/media/image018.png" alt="image018"></p>
+<p><img src="/media/goip-connect-to-3cx/image018.png" alt="image018"></p>
 <p>2.在主叫号码框里填“*”，在“选择一条SIP中继线连接到此规则”里选择中继网关“goip”，呼叫分配处选择分机1002，也就是第一步里设置的SIP话机号码，表示将中继网关送过来的呼叫请求送到1002的分机上。</p>
-<p><img src="/media/image020.jpg" alt="image020"></p>
+<p><img src="/media/goip-connect-to-3cx/image020.jpg" alt="image020"></p>
 <p>3.配置“GoIP呼入管理”</p>
 <p>为了使话机的来电显示为主叫的手机号，将“CID”穿透模式设置为“使用CID作为SIP主叫号”。注意“呼叫VOIP”设置为“启用”，在“转移号码”里填写中继网关的中继线号码1003。</p>
-<p><img src="/media/image021.png" alt="image021"></p>
+<p><img src="/media/goip-connect-to-3cx/image021.png" alt="image021"></p>
 <p>如下图所示，中继线号码在这里查看</p>
-<p><img src="/media/image023.jpg" alt="image023"></p>
+<p><img src="/media/goip-connect-to-3cx/image023.jpg" alt="image023"></p>
 
     </div>
 
