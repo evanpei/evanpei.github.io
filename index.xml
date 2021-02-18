@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>Goip Connect to 3cx</title>
+      <title>GoIP对接3CX</title>
       <link>https://evanpei.github.io/post/goip-connect-to-3cx/</link>
       <pubDate>Sun, 25 Mar 2018 22:41:00 +0800</pubDate>
       
       <guid>https://evanpei.github.io/post/goip-connect-to-3cx/</guid>
-      <description>本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的信息</description>
+      <description>提示 本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的</description>
     </item>
     
     <item>
