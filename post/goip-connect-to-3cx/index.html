@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Goip Connect to 3cx - Evan Pei</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Evan" /><meta name="description" content="本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的信息" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://evanpei.github.io/post/goip-connect-to-3cx/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Goip Connect to 3cx" />
+<meta property="og:description" content="本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的信息" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://evanpei.github.io/post/goip-connect-to-3cx/" />
+<meta property="article:published_time" content="2018-03-25T22:41:00+08:00" />
+<meta property="article:modified_time" content="2018-03-25T22:41:00+08:00" />
+<meta itemprop="name" content="Goip Connect to 3cx">
+<meta itemprop="description" content="本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的信息">
+<meta itemprop="datePublished" content="2018-03-25T22:41:00+08:00" />
+<meta itemprop="dateModified" content="2018-03-25T22:41:00+08:00" />
+<meta itemprop="wordCount" content="1186">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Goip Connect to 3cx"/>
+<meta name="twitter:description" content="本手册以3CX 15.5.0版本作为示例。 1.添加SIP话机账号 按下图所示打开分机设置面板。 按下图所示顺序操作添加一个分机账号 根据所设置的信息"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Evan</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Evan</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Goip Connect to 3cx</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-25 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1添加sip话机账号">1.添加SIP话机账号</a></li>
+    <li><a href="#2添加sip中继">2.添加SIP中继</a></li>
+    <li><a href="#3配置goip连接至3cx">3.配置GoIP连接至3CX</a></li>
+    <li><a href="#4配置3cx呼出至goip">4.配置3CX呼出至GoIP</a></li>
+    <li><a href="#5配置goip呼入至3cx">5.配置GoIP呼入至3CX</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>本手册以3CX 15.5.0版本作为示例。</p>
+<h1 id="1添加sip话机账号">1.添加SIP话机账号</h1>
+<ol>
+<li>
+<p>按下图所示打开分机设置面板。</p>
+<p><img src="/media/image001.png" alt="image001"></p>
+</li>
+<li>
+<p>按下图所示顺序操作添加一个分机账号</p>
+<p><img src="/media/image002.png" alt="image002"></p>
+</li>
+<li>
+<p>根据所设置的信息填写SIP话机，使其注册到3CX。成功注册的分机如下图显示绿色标记，若为红色，则表示未注册成功，请检查注册信息是否填写正确。</p>
+<p><img src="/media/image003.png" alt="image003"></p>
+</li>
+</ol>
+<h1 id="2添加sip中继">2.添加SIP中继</h1>
+<p>1.如下图所示，点击“SIP中继”打开SIP中继配置面板，然后点击“添加网关”按钮添加一个落地网关账号。</p>
+<p><img src="/media/image005.jpg" alt="image005"></p>
+<p>2.在弹出的菜单中选择网关品牌为Generic，网关型号为Generic Gateway Device。由于这里使用的网关为16口GoIP，因此设备的PSTN端口数量设置为16，其他网关根据线路数量作调整。中继线号码填“1003”，点击“完成”，进入详细设置。</p>
+<p><img src="/media/image007.jpg" alt="image007"></p>
+<p>3.在“注册商/服务器/网关的主机名或IP地址”里填写GoIP的IP地址和SIP端口号，默认情况下端口号为5060。验证类型选择“无需验证，基于IP”。特别注意这里的“验证ID”和“验证密码”，在通过GoIP呼出到PSTN时用不上，但是在通过GoIP呼入至话机时3CX会验证用户名和密码。</p>
+<p><img src="/media/image009.jpg" alt="image009"></p>
+<h1 id="3配置goip连接至3cx">3.配置GoIP连接至3CX</h1>
+<p>(1)点击“VoIP基本配置”，按下图所示配置”</p>
+<p><img src="/media/image010.png" alt="image010"></p>
+<p>配置模式——“Trunk Gateway模式”，即点对点模式，不用向服务器注册，只认证IP</p>
+<p>SIP Trunk Gateway1——3CX服务器的IP，若3CX的SIP端口不是5060，则按这样的格式填写：IP:Port，例如192.168.3.182:5080</p>
+<p>电话号码——上一步设置中设置的中继线号码</p>
+<p>认证ID——上一步中继线设置里的验证ID</p>
+<p>密码——上一步中继线设置里的验证密码</p>
+<h1 id="4配置3cx呼出至goip">4.配置3CX呼出至GoIP</h1>
+<p>1.按下图数字添加呼出规则。</p>
+<p><img src="/media/image011.png" alt="image010"></p>
+<p>2.这里以一个简单的呼出规则作为示例。当匹配到被叫号的前缀为 9 时，则删掉第一位数</p>
+<p>字 9，将呼叫发送至 SIP 中继——“goip”。</p>
+<p><img src="/media/image013.jpg" alt="image013"></p>
+<p>在弹出框内按下图设置，允许DEFAULT组内的所有分机通过这个中继网关呼出。</p>
+<p><img src="/media/image015.jpg" alt="image015"></p>
+<p>3.配置呼出线路，在路由1里选择中继网关“goip”，删除位数选“1”。表示在通过中继网关“goip”呼出时，删掉被叫号码的的第一位数字“9”。</p>
+<p><img src="/media/image017.jpg" alt="image017"></p>
+<p>4.测试呼出是否正常，注意拨号时加拨前缀“9”，如“910086”。</p>
+<h1 id="5配置goip呼入至3cx">5.配置GoIP呼入至3CX</h1>
+<p>1.点击左侧导航栏“呼入规则”打开呼入规则配置面板，点击“添加CID规则”。</p>
+<p><img src="/media/image018.png" alt="image018"></p>
+<p>2.在主叫号码框里填“*”，在“选择一条SIP中继线连接到此规则”里选择中继网关“goip”，呼叫分配处选择分机1002，也就是第一步里设置的SIP话机号码，表示将中继网关送过来的呼叫请求送到1002的分机上。</p>
+<p><img src="/media/image020.jpg" alt="image020"></p>
+<p>3.配置“GoIP呼入管理”</p>
+<p>为了使话机的来电显示为主叫的手机号，将“CID”穿透模式设置为“使用CID作为SIP主叫号”。注意“呼叫VOIP”设置为“启用”，在“转移号码”里填写中继网关的中继线号码1003。</p>
+<p><img src="/media/image021.png" alt="image021"></p>
+<p>如下图所示，中继线号码在这里查看</p>
+<p><img src="/media/image023.jpg" alt="image023"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Evan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-03-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/php%E9%80%9A%E8%BF%87socket%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/">
+            <span class="next-text nav-default">PHP通过socket连接数据库的问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://evanpei.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Evan</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
